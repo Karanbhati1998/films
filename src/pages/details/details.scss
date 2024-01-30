@@ -1,0 +1,15 @@
+.caurosel{
+    position: relative;
+    margin-bottom: 70px;
+    & .content-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .cauroselTitle{
+        font-size:24px ;
+        font-weight: 500;
+        color: white;
+    }
+}

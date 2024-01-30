@@ -1,0 +1,15 @@
+@import '../../mixins.scss';
+.genres{
+    display: flex;
+    z-index: 2;
+    gap: 5px;
+    align-items: center;
+    .genre{
+        background-color: var(--pink);
+        padding:3px 5px;
+        font-size: 10px;
+        color: white;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}
