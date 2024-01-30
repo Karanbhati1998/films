@@ -46,7 +46,7 @@ function DetailsBanner({crew,video}) {
                                 <div className="left">
                                 <LazyLoadImg
                                 className="posterImg"
-                                 img={url.backdrop+data.poster_path || posterFallBAck}/>
+                                 img={data?.poster_path?url?.backdrop+data?.poster_path : posterFallBAck}/>
                                 </div>
                                 <div className="right">
                                     <div className="title">
@@ -57,7 +57,10 @@ function DetailsBanner({crew,video}) {
                                         </div>
                                         <Genres genre_ids={_genre} />
                                         <div className="row">
+                                           { !!data?.vote_average &&
                                         <RatingCircle vote_average={data?.vote_average?.toFixed(1)}/>
+                                            }
+                                           { !!video?.key &&
                                         <div className="playbtn" onClick={()=>{
                                             setVideoId(video?.key)
                                             setShow(true)}}>
@@ -66,10 +69,11 @@ function DetailsBanner({crew,video}) {
                                                 Watch Trailer
                                             </span>
                                         </div>
+                                            }
                                         </div>
                                         <div className="overview">
                                             <div className="heading">
-                                                Overview
+                                            {data?.overview ? "Overview":""}
                                             </div>
                                             <div className="descreption">
                                                 {data.overview}

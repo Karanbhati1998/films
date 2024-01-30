@@ -4,9 +4,10 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import ContentWrapper from '../conntentWrapper/ContentWrapper'
-import { useEffect, useState } from 'react';
+import { useEffect, useState ,useRef} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom'
 function Header() {
+  const inputRef = useRef(null);
   const [show, setShow] = useState("top");
   const [lastScrollY, setLastScrollY] = useState(0);
   const[mobileMenu,setMobileMenu]=useState(false)
@@ -41,6 +42,9 @@ function Header() {
     setMobileMenu(false)
     setShowsearch(true)
   }
+  useEffect(()=>{
+    showSearch?inputRef.current.focus():''
+  },[showSearch])
   function openMobileMenu(){
     setMobileMenu(true)
     setShowsearch(false)
@@ -93,6 +97,7 @@ function Header() {
         <ContentWrapper>
           <div className="searchInput">
             <input type="text" name="" id=""
+            ref={inputRef}
             placeholder='Search a Movie Or TV Show'
             onChange={(e)=>{
               setQuery(e.target.value)

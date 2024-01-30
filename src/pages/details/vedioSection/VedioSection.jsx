@@ -18,43 +18,48 @@ function VedioSection({data,loading}) {
     }
   return (
     <div className="vedioSection">
-        <ContentWrapper>
-            <div className="sectionHeading">Offical Heading</div>
-            {
-                loading?(
-                    <div className="videoSkeleton">
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                    </div>
-                ):(
-                    <div className="vedios">
-                        {
-                            data?.results?.map(item=>(
-                                <div className="vedio" key={item.id}>
-                                    <div className="thumbnail" onClick={()=>{
-                                        setShow(true)
-                                        setVideoId(item.key)
-                                    }}>
-                                    <LazyLoadImg img={`https://img.youtube.com/vi/${item.key}/mqdefault.jpg`}
-                                    />
-                                    <Playbtn/>
-                                    </div>
-                                    <div className="videoTitle">{item.name}</div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                )
-            }
-        </ContentWrapper>
-        <VedioPopup
-         show={show}
-         setShow={setShow}
-         videoId={videoId}
-         setVideoId={setVideoId}/>
+        {
+            data?.results?.length>0 &&
+           <> 
+           <ContentWrapper>
+               <div className="sectionHeading">Offical Heading</div>
+               {  
+                   loading?(
+                       <div className="videoSkeleton">
+                           {loadingSkeleton()}
+                           {loadingSkeleton()}
+                           {loadingSkeleton()}
+                           {loadingSkeleton()}
+                           {loadingSkeleton()}
+                       </div>
+                   ):(
+                       <div className="vedios">
+                           {
+                               data?.results?.map(item=>(
+                                   <div className="vedio" key={item.id}>
+                                       <div className="thumbnail" onClick={()=>{
+                                           setShow(true)
+                                           setVideoId(item.key)
+                                       }}>
+                                       <LazyLoadImg img={`https://img.youtube.com/vi/${item.key}/mqdefault.jpg`}
+                                       />
+                                       <Playbtn/>
+                                       </div>
+                                       <div className="videoTitle">{item.name}</div>
+                                   </div>
+                               ))
+                           }
+                       </div>
+                   )
+               }
+           </ContentWrapper>
+           <VedioPopup
+            show={show}
+            setShow={setShow}
+            videoId={videoId}
+            setVideoId={setVideoId}/>
+           </> 
+        }
     </div>
   )
 }

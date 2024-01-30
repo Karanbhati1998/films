@@ -36,7 +36,6 @@ function SearchResults() {
     setPageNo(1)
   fetchInitalData()
   },[query])
-  console.log(data);
   return (
     <div className="searchResultPage">
       {false ?<Spinner initial={true}/>:(
