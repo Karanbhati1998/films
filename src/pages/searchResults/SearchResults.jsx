@@ -20,7 +20,6 @@ function SearchResults() {
     setLoading(false)
   }
   const fetchNextPageData=async()=>{
-    setLoading(true)
     const res=await apiFetchMovieData(`/search/multi?query=${query}&page=${pageNo}`)
     if(data?.results){
       setData(prev=>{

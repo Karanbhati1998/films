@@ -45,7 +45,7 @@ const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
         setLoading(false)
   }
   const fetchNextPageData=async()=>{
-        const res=await apiFetchMovieData(`/discover/${mediaType}&page=${pageNo}`,filters)
+        const res=await apiFetchMovieData(`/discover/${mediaType}?page=${pageNo}`,filters)
         if(data?.results){
           setData(
            { ...data,results:[...data?.results,...res?.results]}
@@ -63,7 +63,6 @@ const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
     fetchIntialData()
   },[mediaType])
 function onChange(selectedItems,action){
-  console.log(selectedItems);
   if (action.name=='sortby') {
     setSortBy(selectedItems)
     if(action.action!=="clear"){
