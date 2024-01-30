@@ -96,7 +96,7 @@ function Header() {
      {showSearch && <div className='searchBar'>
         <ContentWrapper>
           <div className="searchInput">
-            <input type="text" name="" id=""
+            <input type="search" name="" id=""
             ref={inputRef}
             placeholder='Search a Movie Or TV Show'
             onChange={(e)=>{

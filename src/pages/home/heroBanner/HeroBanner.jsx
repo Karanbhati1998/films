@@ -36,7 +36,7 @@ function HeroBanner() {
 Millions of movies, TV shows and people to discover. Explore now.
           </span>
           <div className="searchInput">
-            <input type="text" value={searchInput} 
+            <input type="search" value={searchInput} 
             placeholder='Search for a movie or Tv Shows'
             onKeyUp={searchInputHandle}
             onChange={(e)=>{
