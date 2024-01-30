@@ -14,7 +14,7 @@ function SearchResults() {
   const {query}=useParams()
   const fetchInitalData=async()=>{
     setLoading(true)
-    const res=await apiFetchMovieData(`/search/multi?query=${query}&page=${pageNo}`)
+    const res=await apiFetchMovieData(`/search/multi?query=${query}`)
     setData(res)  
     setPageNo(prev=>prev+1)
     setLoading(false)
