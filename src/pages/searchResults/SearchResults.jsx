@@ -32,6 +32,8 @@ function SearchResults() {
     setPageNo(prev=>prev+1)
   }
   useEffect(()=>{
+    setData(null)
+    setPageNo(1)
   fetchInitalData()
   },[query])
   console.log(data);
