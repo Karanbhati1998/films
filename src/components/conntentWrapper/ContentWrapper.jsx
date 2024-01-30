@@ -1,4 +1,4 @@
-import './ContentWrapper.scss'
+import './contentWrapper.scss'
 
 function ContentWrapper({children}) {
   return (
