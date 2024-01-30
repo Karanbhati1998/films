@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import {useDispatch} from 'react-redux'
 import useFetch from './hooks/useFetch'
 import { getApiConfiguration,getGenures } from './store/homeSlice'
-import apiFetchMovieData from './utils/Api'
+import apiFetchMovieData from './utils/api'
 function App() {
   const dispatch=useDispatch()
   const {data} =useFetch('/configuration')

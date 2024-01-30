@@ -3,7 +3,7 @@ import ContentWrapper from '../../components/conntentWrapper/ContentWrapper'
 import MovieCard from '../../components/movieCard/MovieCard'
 import { useParams } from "react-router-dom";
 import Spinner from '../../components/spinner/Spinner'
-import apiFetchMovieData from '../../utils/Api';
+import apiFetchMovieData from '../../utils/api';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from 'react';
 import useFetch from '../../hooks/useFetch';

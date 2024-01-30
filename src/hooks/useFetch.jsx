@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import apiFetchMovieData from '../utils/Api'
+import apiFetchMovieData from '../utils/api'
 
 function useFetch(endPoint) {
     const[data,setData]=useState('')
